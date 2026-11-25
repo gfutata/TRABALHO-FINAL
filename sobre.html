@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre mim</title>
+    <script src="script.js" defer></script>
+    <link rel="icon" href="icon.jpg" type="image/jpeg">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4eee4;
+            color: #1e231d;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1;
+            width: min(1000px, 90%);
+            margin: 0 auto;
+            padding: 3rem 0;
+        }
+
+        .cabecalho {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            border-bottom: solid #d8cdbb;
+        }
+
+        .marca {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #1e231d;
+            text-decoration: none;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: 1px solid #d8cdbb;
+            border-radius: 4px;
+            color: #1e231d;
+            font-size: 1.4rem;
+            padding: 0.2rem 0.7rem;
+            cursor: pointer;
+        }
+
+        .menu ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu a {
+            color: #1e231d;
+            text-decoration: none;
+        }
+
+        .menu a:hover {
+            color: #8a2e28;
+        }
+
+        .rodape {
+            background-color: #1e231d;
+            color: #f4eee4;
+            text-align: center;
+            padding: 2rem 5%;
+        }
+
+        .rodape a {
+            color: #f4eee4;
+        }
+
+        .link-sociais {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1rem;
+        }
+
+        @keyframes surgir {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: none;
+
+            }
+        }
+
+        .sobre {
+            animation: surgir 0.8s ease both;
+        }
+
+        .hobbies {
+            margin-top: 2rem;
+        }
+
+        .lista-hobbies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .hobby {
+            flex: 1 1 400px;
+            border: 1px solid #d8cdbb;
+            border-radius: 4px;
+            padding: 1rem 1.5rem;
+        }
+
+        .hobby h3 {
+            margin-top: 0;
+            font-size: 1.3rem;
+        }
+
+        .hobby img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        /* Adaptação para celular */
+        @media (max-width: 600px) {
+            .cabecalho {
+                flex-wrap: wrap;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .menu {
+                display: none;
+                width: 100%;
+                background-color: #f4eee4;
+            }
+
+            .menu ul {
+                flex-direction: column;
+                gap: 0;
+                padding: 0.5rem 0;
+            }
+
+            .menu li a {
+                display: block;
+                padding: 0.75rem 0;
+            }
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <header class="cabecalho">
+        <a href="index.html" class="marca">Meu Portfólio</a>
+        <button class="menu-toggle" onclick="alternarMenu()">☰</button>
+        <nav id="menu-principal" class="menu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="sobre.html">Sobre mim</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="sobre">
+            <h1>Sobre mim</h1>
+            <p>Eu sou o Guilherme Futata, tenho 19 anos, moro em Arapongas e estou cursando
+                Engenharia de Software na UniFil. Gosto de jogar videogames, praticar esportes e passar o tempo com a
+                namorada.</p>
+
+            <h2>Formação</h2>
+            <ul>
+                <li>Engenharia de Software: UniFil (cursando) </li>
+            </ul>
+
+            <section class="hobbies">
+                <h2>Hobbies</h2>
+                <div class="lista-hobbies">
+                    <article class="hobby">
+                        <img src="foto-academia.jpeg" alt="Foto na Academia">
+                        <h3>Academia</h3>
+                        <p>Comecei a treinar faz 2 anos e virou parte da minha rotina. Fui aprendendo com outras pessoas
+                            e hoje tenho bastante conhecimento para treinar sozinho.</p>
+                    </article>
+
+                    <article class="hobby">
+                        <img src="foto-basquete.jpeg" alt="Foto de Basquete">
+                        <h3>Basquete</h3>
+                        <p>Comecei a jogar basquete no 9º ano do ensino fundamental, por causa do meu tio, que já foi
+                            jogador de basquete, mas não chegou muito longe. Porém, aqui na minha cidade ele é muito
+                            conhecido pelos jogadores. No ensino médio conheci uns caras que também jogavam e que
+                            viraram
+                            meus amigos até hoje por causa desse esporte. Atualmente não jogo mais nem treino, porém
+                            queria
+                            voltar à ativa.</p>
+                    </article>
+
+                    <article class="hobby">
+                        <img src="foto-videogame.jpeg" alt="Foto de Videogames">
+                        <h3>Videogames</h3>
+                        <p>Jogos sempre fizeram parte da minha vida. Meus primos jogavam muito e meu primeiro videogame
+                            foi
+                            o Wii. Depois ganhei um computador básico, mas que já rodava alguns jogos que eu queria
+                            jogar,
+                            como Minecraft, CS:GO, Fortnite, Valorant e Roblox. Então comprei um notebook para a
+                            faculdade
+                            que faz todas as atividades de que preciso e também roda vários jogos.</p>
+                    </article>
+
+                    <article class="hobby">
+                        <img src="foto-corrida.jpeg" alt="Foto de corrida">
+                        <h3>Corrida</h3>
+                        <p>Comecei a correr antes de virar modinha, pois queria melhorar minha resistência para jogar
+                            basquete. Lembro que comecei sozinho, mas com o tempo chamei uns amigos para correr juntos.
+                            Desde então, participamos de algumas corridas, mas atualmente só faço treinos leves de vez
+                            em
+                            quando. Também corro com minha namorada, que gosta de correr.</p>
+                    </article>
+                </div>
+            </section>
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        <nav>
+            <ul class="link-sociais">
+                <li><a href="https://www.linkedin.com/in/guilherme-futata-b843173b0/" target="_blank"
+                        rel="noopener noreferrer">Linkedin</a></li>
+                <li><a href="https://github.com/gfutata" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                <li><a href="https://mail.google.com/mail/?view=cm&amp;to=guilherme.futata@edu.unifil.br"
+                        target="_blank" rel="noopener noreferrer">Gmail</a></li>
+            </ul>
+        </nav>
+        <p>Página desenvolvida pelo Guilherme Futata</p>
+    </footer>
+
+</body>
+
+</html>

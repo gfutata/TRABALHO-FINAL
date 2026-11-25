@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+    <script src="script.js" defer></script>
+    <link rel="icon" href="icon.jpg" type="image/jpeg">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4eee4;
+            color: #1e231d;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1;
+            width: min(1000px, 90%);
+            margin: 0 auto;
+            padding: 3rem 0;
+        }
+
+        .cabecalho {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            border-bottom: solid #d8cdbb;
+        }
+
+        .marca {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #1e231d;
+            text-decoration: none;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: 1px solid #d8cdbb;
+            border-radius: 4px;
+            color: #1e231d;
+            font-size: 1.4rem;
+            padding: 0.2rem 0.7rem;
+            cursor: pointer;
+        }
+
+        .menu ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu a {
+            color: #1e231d;
+            text-decoration: none;
+        }
+
+        .menu a:hover {
+            color: #8a2e28;
+        }
+
+        .apresentacao {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .apresentacao img {
+            width: 260px;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+
+        .texto-apresentacao {
+            flex: 1;
+        }
+
+        .apresentacao h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .apresentacao p {
+            font-size: 1.2rem;
+            color: #8a2e28;
+        }
+
+        .rodape {
+            background-color: #1e231d;
+            color: #f4eee4;
+            text-align: center;
+            padding: 2rem 5%;
+        }
+
+        .rodape a {
+            color: #f4eee4;
+        }
+
+        .link-sociais {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1rem;
+        }
+
+        #texto-extra {
+            display: none;
+        }
+
+        @keyframes surgir {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: none;
+
+            }
+        }
+
+        .apresentacao h1 {
+            animation: surgir 0.8s ease both;
+        }
+
+        .apresentacao p {
+            animation: surgir 0.8s 0.3s ease both;
+        }
+
+        .menu a {
+            transition: color 0.3s ease;
+        }
+
+        .habilidades {
+            animation: surgir 0.8s ease both;
+        }
+
+        .lista-habilidades li {
+            padding: 0.25rem 0;
+
+        }
+
+        /* Adaptação para celular */
+        @media (max-width: 600px) {
+            .cabecalho {
+                flex-wrap: wrap;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .menu {
+                display: none;
+                width: 100%;
+                background-color: #f4eee4;
+            }
+
+            .menu ul {
+                flex-direction: column;
+                gap: 0;
+                padding: 0.5rem 0;
+            }
+
+            .menu li a {
+                display: block;
+                padding: 0.75rem 0;
+            }
+
+            .apresentacao {
+                flex-direction: column;
+            }
+
+            .apresentacao img {
+                width: 200px;
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <a href="index.html" class="marca">Meu Portfólio</a>
+        <button class="menu-toggle" onclick="alternarMenu()">☰</button>
+        <nav id="menu-principal" class="menu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="sobre.html">Sobre mim</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="apresentacao">
+
+            <img src="foto-perfil.jpeg" alt="Foto de perfil">
+
+            <div class="texto-apresentacao">
+                <h1>Bem vindo ao meu portfólio</h1>
+                <p>Meu nome é Guilherme Futata e estou cursando Engenharia de Software na UniFil.</p>
+
+                <button id="botao-ler-mais" onclick="alternarTexto()">Ler mais</button>
+                <p id="texto-extra">
+                    Moro em Arapongas e tenho 19 anos.
+                </p>
+
+                <section class="habilidades">
+                    <h2>Habilidades</h2>
+                    <ul class="lista-habilidades">
+                        <li>HTML e CSS</li>
+                        <li>Java</li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+
+
+    </main>
+
+    <footer class="rodape">
+        <nav>
+            <ul class="link-sociais">
+                <li><a href="https://www.linkedin.com/in/guilherme-futata-b843173b0/" target="_blank"
+                        rel="noopener noreferrer">Linkedin</a></li>
+                <li><a href="https://github.com/gfutata" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                <li><a href="https://mail.google.com/mail/?view=cm&amp;to=guilherme.futata@edu.unifil.br"
+                        target="_blank" rel="noopener noreferrer">Gmail</a></li>
+            </ul>
+        </nav>
+        <p>Pagina desenvolvida pelo Guilherme Futata</p>
+    </footer>
+</body>
+
+</html>

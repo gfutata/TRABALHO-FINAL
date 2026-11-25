@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetos</title>
+    <script src="script.js" defer></script>
+    <link rel="icon" href="icon.jpg" type="image/jpeg">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4eee4;
+            color: #1e231d;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1;
+            width: min(1000px, 90%);
+            margin: 0 auto;
+            padding: 3rem 0;
+        }
+
+        .cabecalho {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            border-bottom: solid #d8cdbb;
+        }
+
+        .marca {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #1e231d;
+            text-decoration: none;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: 1px solid #d8cdbb;
+            border-radius: 4px;
+            color: #1e231d;
+            font-size: 1.4rem;
+            padding: 0.2rem 0.7rem;
+            cursor: pointer;
+        }
+
+        .menu ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu a {
+            color: #1e231d;
+            text-decoration: none;
+        }
+
+        .menu a:hover {
+            color: #8a2e28;
+        }
+
+        .rodape {
+            background-color: #1e231d;
+            color: #f4eee4;
+            text-align: center;
+            padding: 2rem 5%;
+        }
+
+        .rodape a {
+            color: #f4eee4;
+        }
+
+        .link-sociais {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1rem;
+        }
+
+        .filtros{
+            display: flex;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .filtros button{
+            background: none;
+            border: 1px solid #d8cdbb;
+            border-radius: 4px;
+            color: #1e231d;
+            font-size: 1rem;
+            padding: 0.4rem 1rem;
+            cursor: pointer;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .filtros button:hover{
+            color: #8a2e28;
+            border-color:#8a2e28;
+        }
+
+        .lista-projetos{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .projeto {
+            flex: 1 1 280px;
+            border: 1px solid #d8cdbb;
+            border-radius: 4px;
+            padding: 1rem 1.5rem;
+        }
+
+        .projeto h2 {
+            margin-top: 0;
+            font-size: 1.3rem;
+        }
+
+        /* Adaptação para celular */
+        @media (max-width: 600px) {
+            .cabecalho {
+                flex-wrap: wrap;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .menu {
+                display: none;
+                width: 100%;
+                background-color: #f4eee4;
+            }
+
+            .menu ul {
+                flex-direction: column;
+                gap: 0;
+                padding: 0.5rem 0;
+            }
+
+            .menu li a {
+                display: block;
+                padding: 0.75rem 0;
+            }
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <header class="cabecalho">
+        <a href="index.html" class="marca">Meu Portfólio</a>
+        <button class="menu-toggle" onclick="alternarMenu()">☰</button>
+        <nav id="menu-principal" class="menu">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="sobre.html">Sobre mim</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="projetos">
+            <h1>Meus projetos</h1>
+            <div class="filtros">
+                <button onclick="filtrarProjetos('todos')">todos</button>
+                <button onclick="filtrarProjetos('monitoria')">monitoria</button>
+                <button onclick="filtrarProjetos('hackathon')">hackathon</button>
+            </div>
+
+            <div class="lista-projetos">
+                <article class="projeto" data-categoria="monitoria">
+                    <h2>Monitor do Londrinense Tech</h2>
+                    <p>Atuei como monitor da turma do 7 ano, ensinamos portugol e introduzimos html e css, com o
+                        objetivo de ensinar o pensamento logico.</p>
+                </article>
+
+                <article class="projeto" data-categoria="hackathon">
+                    <h2>Ideathon UEL</h2>
+                    <p>Participei com meus colegas em um grupo de 4 pessoas, escolhemos o desafio de Saude e obesidade
+                        mas a nossa ideia nao foi classificada para seguir adiante</p>
+                </article>
+
+                <article class="projeto" data-categoria="hackathon">
+                    <h2>Hackathon RetailTech</h2>
+                    <p>Participei com meus colegas em um grupo de 5 pessoas, apresentamos uma solução de um software que
+                        faria a previsibilidade de creditos acumulados para os empreendedores, mas nossa solução ficou
+                        em 4 lugar não conseguindo atingir o podio, porem ganhamos uma oportunidade de entrar na
+                        incubadora da UniFil, já que ficamos em 4 lugar.</p>
+                </article>
+            </div>
+
+
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        <nav>
+            <ul class="link-sociais">
+                <li><a href="https://www.linkedin.com/in/guilherme-futata-b843173b0/" target="_blank"
+                        rel="noopener noreferrer">Linkedin</a></li>
+                <li><a href="https://github.com/gfutata" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                <li><a href="https://mail.google.com/mail/?view=cm&amp;to=guilherme.futata@edu.unifil.br"
+                        target="_blank" rel="noopener noreferrer">Gmail</a></li>
+            </ul>
+        </nav>
+        <p>Página desenvolvida pelo Guilherme Futata</p>
+    </footer>
+
+</body>
+
+</html>
